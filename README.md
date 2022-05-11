@@ -25,7 +25,7 @@ N/A
 | HasKeybind(name,v)       | Returns a callback of (true, bind name or key), or (false and nil). Key or bind name, and optionally toggle first found   |
 | GetKeybind(name)         | Identical to HasKeybind but does not have a callback and assumes first found, pass a key or bind name                     |
 | GetBindParent()          | Returns the parent table (aka service, array) name                                                                        |
-| GetBind(...)             | If first passed is a table, it scans it else scan it's parent. Returns callback and name or bind accordingly, See issue#1 |
+| GetBind(...)             | If first passed is a table, it scans it else scan it's parent. Returns callback and name or bind accordingly, See [Issue #1](https://github.com/Evercreeper/KeybindService/issues/1) |
 | GetBindObject(...)       | Uses GetBind to get an explicit EnumItem object, returns a callback and the bind as EnumItem                              |
 | CreateKeybind(action,key)| Pass (action: string,key: string), checks if action already exists, will warn if so, else it makes the keybind            |
 | SetKeybind(action,key)   | Sets (overrides)/creates a new keybind, unless the *key* is already bound, then it will warn                              |
