@@ -16,7 +16,7 @@ local KBService = {
 
 
 -- CORE FUNCTIONS
-function log(write: string)
+local function log(write: string)
 	if KBService.logEnabled then
 		table.insert(KBService.changes,write)	
 	else 
@@ -24,7 +24,7 @@ function log(write: string)
 	end
 end
 
-function search_sub(sub,search_term)
+local function search_sub(sub,search_term)
 	for subterm, values in pairs(KBService[sub]) do
 		if subterm == search_term then
 			return true
@@ -34,7 +34,7 @@ function search_sub(sub,search_term)
 end
 
 
-function search_service(search_term)
+local function search_service(search_term)
 	for service, values in pairs(KBService) do
 		if service == search_term then
 			return true
@@ -43,7 +43,7 @@ function search_service(search_term)
 	return false
 end
 
-function search_service_parent(search_term)
+local function search_service_parent(search_term)
 	--warn("START <<") --more testy bits, commenting out so no bad outputs!!
 	--warn(search_term)
 	
@@ -67,7 +67,7 @@ function search_service_parent(search_term)
 	return false, nil
 end
 
-function set_kb(action,key)
+local function set_kb(action,key)
 	KBService.keybinds[action] = Enum.KeyCode[string.upper(key)]
 end
 
